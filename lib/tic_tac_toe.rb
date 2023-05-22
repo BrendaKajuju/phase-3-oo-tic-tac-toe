@@ -82,7 +82,23 @@ class TicTacToe
         end
       end
       
-      
+      def play
+        display_board
+
+        until over?
+            tunr
+        end
+
+        if won?
+            puts "Congratulations, #{winner}! You won!"
+        else
+        puts "It's a draw!"
+         end
+        end
+
+        game = TicTacToe.new
+        game.play
+
       
 
 
