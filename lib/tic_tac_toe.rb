@@ -67,6 +67,21 @@ class TicTacToe
       def full?
         @board.all? { |token| token == "X" || token == "O" }
       end
+
+      def draw?
+        !won? && full?
+      end
+      
+      def over?
+        won? || draw?
+      end
+      
+      def winner
+        if winning_combination = won?
+          @board[winning_combination[0]]
+        end
+      end
+      
       
       
 
