@@ -8,8 +8,7 @@ class TicTacToe
         [0, 3, 6], [1, 4, 7], [2, 5, 8], # Columns
         [0, 4, 8], [2, 4, 6]              # Diagonals
       ]
-    end
-
+    
     def display_board
         puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
         puts "-----------"
@@ -31,7 +30,7 @@ class TicTacToe
     end
 
     def valid_move? (index)
-        index.between?(0, 8) && !position_taken(index)
+        index.between?(0, 8) && !position_taken?(index)
     end
 
     def turn_count
@@ -39,7 +38,7 @@ class TicTacToe
     end
 
     def current_player
-        turn.count.even? ? "X" : "O"
+        turn_count.even? ? "X" : "O"
     end
 
     def turn
@@ -86,7 +85,7 @@ class TicTacToe
         display_board
 
         until over?
-            tunr
+            turn
         end
 
         if won?
