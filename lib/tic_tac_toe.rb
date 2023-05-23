@@ -94,9 +94,9 @@ class TicTacToe
         puts "It's a draw!"
          end
         end
+      end
+      
 
-        game = TicTacToe.new
-        game.play
 
       
 
